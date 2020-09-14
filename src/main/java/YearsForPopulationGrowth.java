@@ -1,3 +1,4 @@
+import java.lang.Math;
 
 public class YearsForPopulationGrowth {
     public static int of(double initialPopulation, double annualIncreasePercentage, int populationToSurpass ) {
@@ -5,19 +6,15 @@ public class YearsForPopulationGrowth {
                 getYearsToSurpass(initialPopulation, annualIncreasePercentage, populationToSurpass);
     }
 
-    private static int getYearsToSurpass(double increasingPopulation, double annualIncreasePercentage, int populationToSurpass) {
-        int yearsToSurpass=0;
-        while (increasingPopulation<=populationToSurpass){
-            increasingPopulation += getOneYearIncrease(increasingPopulation, annualIncreasePercentage);
-            yearsToSurpass++;
-        }
-        return yearsToSurpass;
+    private static int getYearsToSurpass(
+        double initialPopulation,
+        double annualIncreasePercentage,
+        int populationToSurpass
+    ) {
+        float yearsToReach = (float)(
+            Math.log(populationToSurpass / initialPopulation) /
+            Math.log(1 + annualIncreasePercentage / 100)
+        );
+        return 1 + (int)Math.floor(yearsToReach);
     }
-
-    private static double getOneYearIncrease(double increasingPopulation, double annualIncreasePercentage) {
-        return increasingPopulation*(annualIncreasePercentage/100);
-
-    }
-
-
 }
