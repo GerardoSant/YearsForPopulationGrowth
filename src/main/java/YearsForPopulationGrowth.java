@@ -8,15 +8,15 @@ public class YearsForPopulationGrowth {
     ) {
         if (initialPopulation < 1) {
             return -1;
-        } else if (initialPopulation > populationToSurpass) {
+        }
+        if (initialPopulation > populationToSurpass) {
             return 0;
-        } else {
-            getYearsToSurpass(
-                initialPopulation,
-                annualIncreasePercentage,
-                populationToSurpass
-            );  
-        }  
+        }
+        return getYearsToSurpass(
+            initialPopulation,
+            annualIncreasePercentage,
+            populationToSurpass
+        );  
     }
 
     private static int getYearsToSurpass(
