@@ -1,9 +1,22 @@
 import java.lang.Math;
 
 public class YearsForPopulationGrowth {
-    public static int of(double initialPopulation, double annualIncreasePercentage, int populationToSurpass ) {
-        return initialPopulation<1 ? -1 : initialPopulation>populationToSurpass? 0:
-                getYearsToSurpass(initialPopulation, annualIncreasePercentage, populationToSurpass);
+    public static int of(
+        double initialPopulation,
+        double annualIncreasePercentage,
+        int populationToSurpass
+    ) {
+        if (initialPopulation < 1) {
+            return -1;
+        } else if (initialPopulation > populationToSurpass) {
+            return 0;
+        } else {
+            getYearsToSurpass(
+                initialPopulation,
+                annualIncreasePercentage,
+                populationToSurpass
+            );  
+        }  
     }
 
     private static int getYearsToSurpass(
