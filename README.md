@@ -2,13 +2,13 @@
 
 Given an **initial population**, an **annual increase percentage** and a **population to surpass**, calculates how many whole years are required to surpass the specified population goal.
       
-## Running/testing
+## Running tests
 
 ```bash
 mvn test
 ```
 
-## Built With
+## Built with
 
 * [Java](https://www.java.com/es/) - Programming language
 * [Maven](https://maven.apache.org/) - Dependency manager
