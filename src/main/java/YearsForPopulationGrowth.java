@@ -1,6 +1,7 @@
 import java.lang.Math;
 
 public class YearsForPopulationGrowth {
+
     /**
      * Calculates the number of whole years required to surpass
      * the provided population with a steady annual growth rate
@@ -37,7 +38,7 @@ public class YearsForPopulationGrowth {
             initialPopulation,
             annualIncreasePercentage,
             populationToSurpass
-        );  
+        );
     }
 
     private static int getYearsToSurpass(
@@ -45,10 +46,10 @@ public class YearsForPopulationGrowth {
         double annualIncreasePercentage,
         int populationToSurpass
     ) {
-        float yearsToReach = (float)(
+        float yearsToReach = (float) (
             Math.log(populationToSurpass / initialPopulation) /
             Math.log(1 + annualIncreasePercentage / 100)
         );
-        return 1 + (int)Math.floor(yearsToReach);
+        return 1 + (int) Math.floor(yearsToReach);
     }
 }
