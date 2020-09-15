@@ -5,10 +5,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class YearsForPopulationGrowth_ {
 
-    /* First value: ini - initial population
-     Second value: per - increasing percentage per year
-     Third value: population to surpass */
-
+    /* Example invocation:
+     * 
+     * YearsForPopulationGrowth.of(
+     *     initialPopulation,
+     *     increasingPercentagePerYear,
+     *     populationToSurpass
+     * );
+     */
+    
     @Test
     public void should_return_minus1_given_initialBelow1(){
         assertThat(YearsForPopulationGrowth.of(0, 10, 1000)).isEqualTo(-1);
@@ -19,7 +24,7 @@ public class YearsForPopulationGrowth_ {
     }
 
     @Test
-    public void should_return_0_given_anyPopulationToSurpassBelowInitialPopulation(){
+    public void should_return_0_given_surpassBelowInitial(){
         assertThat(YearsForPopulationGrowth.of(1000, 10, 999)).isEqualTo(0);
         assertThat(YearsForPopulationGrowth.of(2000, 10, 800)).isEqualTo(0);
         assertThat(YearsForPopulationGrowth.of(32000, -10, -100)).isEqualTo(0);
